@@ -1,0 +1,47 @@
+
+<html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorator="layouts/layout">
+<head>
+<title>Page Title</title>
+</head>
+<body>
+	<div layout:fragment="content">
+		<form>
+			<span class="subtitle">User list form</span>
+			<div class="listBlock">
+				<div class="search-block">
+					<input type="text" id="searchSurname" name="searchSurname" /> <br />
+					<label for="searchSurname" th:text="#{search.label}">Search
+						label:</label>
+					<button id="searchButton" name="searchButton"
+						onclick="retrieveGuests()" type="button"
+						th:text="#{search.button}">Search button</button>
+				</div>
+
+				<!-- Results block -->
+				<div id="resultsBlock"></div>
+			</div>
+		</form>
+
+		<script>
+		 /*<![CDATA[*/
+			function retrieveGuests() {
+				var url = '/play/searchUsers';
+
+				//    if ($('#searchSurname').val() != '') {
+				//        url = url + '/' + $('#searchSurname').val();
+				//    }
+
+				$("#resultsBlock").load(url);
+			}
+			
+			function removeBlock() {
+			var url = '/play/removeRange';
+			$("#resultsBlock").load(url);
+				//$("#resultsBlock").html("");
+			}
+			    /*]]>*/
+		</script>
+	</div>
+</body>
+</html>

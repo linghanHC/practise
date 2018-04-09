@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:th="http://www.thymeleaf.org" lang="en">
+
+<head>
+</head>
+
+<body>
+    <div th:fragment="resultsList" th:unless="${#lists.isEmpty(users)}" id="results-block">
+        <table>
+            <thead>
+                <tr>
+                    <th th:text="#{results.user.userId}">Id</th>
+                    <th th:text="#{results.user.userName}">Surname</th>
+                    <th th:text="#{results.user.gender}">Gender</th>
+                    <th th:text="#{results.user.married}">Married</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="user : ${users}">
+                    <td th:text="${user.userId}">id</td>
+                    <td th:text="${user.userName}">surname</td>
+                    <td th:text="${user.gender}">name</td>
+                    <td th:text="${user.married}">country</td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <a href="#" onclick="removeBlock()">Remove the block</a> 
+    </div>
+    
+    
+</body>
+</html>

@@ -1,0 +1,35 @@
+
+<html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorator="layouts/layout">
+<head>
+<title>Page Title</title>
+</head>
+<body>
+	<div layout:fragment="content">
+		<h1>page1</h1>
+		
+		<form th:object="${formBean03}" th:action="'/url'">
+		<span th:text="*{id}">id</span> 
+		<!-- <ul>
+          <li th:each="feat : ${allFeatures}">
+            <input type="checkbox" th:field="*{features}" th:value="${feat}" th:checked="${feat == 3}"></input>
+            <label th:for="${#ids.prev('features')}" th:text="${'label.feature.' + feat}">Electric Heating</label>
+          </li>
+        </ul> -->
+		
+		</form>
+		
+		<form th:object="${subformBean01}" th:action="'/url'">
+		<span th:text="*{features}">features</span> 
+		</form>
+		
+		
+<!-- 		<form th:object="${formBean03.subformBean01}" th:action="'/url'">
+			
+.
+			<input type="radio"
+				th:field="*{subformBean01.enum01choice}" th:each="val : *{enum01Values}" th:value="${val}" />
+		</form> -->
+	</div>
+</body>
+</html>
