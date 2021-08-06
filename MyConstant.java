@@ -4,7 +4,7 @@ public class MyConstant {
 
 		final public static String CONS = "Y";
 
-
+        // test 2
 		public enum AppType {
 			TRADITIONAL((short) 26),
 			UNTRADITIONAL((short) 67);
