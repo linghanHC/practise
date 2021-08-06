@@ -1,9 +1,9 @@
 package ca.hockey.wet;
 
 public class MyConstant {
+        // test1
 
 		final public static String CONS = "Y";
-
 
 		public enum AppType {
 			TRADITIONAL((short) 26),
